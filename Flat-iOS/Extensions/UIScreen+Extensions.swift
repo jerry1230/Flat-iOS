@@ -5,7 +5,6 @@
 //  Created by LM on 2021/5/13.
 //
 
-import Foundation
 import UIKit
 
 public extension UIScreen {

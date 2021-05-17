@@ -5,7 +5,6 @@
 //  Created by LM on 2021/5/13.
 //
 
-import Foundation
 import UIKit
 
 public extension UIView {
@@ -14,7 +13,7 @@ public extension UIView {
         get {
             return self.frame.origin.x
         }
-        set{
+        set {
             self.frame.origin.x = newValue
         }
     }
@@ -23,7 +22,7 @@ public extension UIView {
         get {
             return self.frame.origin.y
         }
-        set{
+        set {
             self.frame.origin.y = newValue
         }
     }
@@ -32,7 +31,7 @@ public extension UIView {
         get {
             return self.frame.size.width
         }
-        set{
+        set {
             self.frame.size.width = newValue
         }
     }
@@ -41,7 +40,7 @@ public extension UIView {
         get {
             return self.frame.size.height
         }
-        set{
+        set {
             self.frame.size.height = newValue
         }
     }
@@ -50,7 +49,7 @@ public extension UIView {
         get {
             return self.frame.origin
         }
-        set{
+        set {
             self.frame.origin = newValue
         }
     }
@@ -59,7 +58,7 @@ public extension UIView {
         get {
             return self.frame.size
         }
-        set{
+        set {
             self.frame.size = newValue
         }
     }

@@ -5,15 +5,14 @@
 //  Created by LM on 2021/5/12.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 
-final class FlatCloudViewController:UIViewController{
+final class FlatCloudViewController: UIViewController {
     
-    let joinRoomBtn:UIButton = UIButton.init(type: .custom)
-    let createRoomBtn:UIButton = UIButton.init(type: .custom)
-    let orderRoomBtn:UIButton = UIButton.init(type: .custom)
+    let joinRoomBtn = UIButton.init(type: .custom)
+    let createRoomBtn = UIButton.init(type: .custom)
+    let orderRoomBtn = UIButton.init(type: .custom)
     
     
     override func viewDidLoad() {

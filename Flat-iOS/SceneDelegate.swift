@@ -17,14 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        let windowScene:UIWindowScene = scene as! UIWindowScene
-        self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        self.window?.backgroundColor = UIColor.white
+        let windowScene = scene as! UIWindowScene
+        self.window = .init(frame: UIScreen.main.bounds)
+        self.window?.backgroundColor = .white
         
         let mainStoryboardFileName:String = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
         self.window?.windowScene = windowScene
-        let mainStoryBoard:UIStoryboard = UIStoryboard.init(name: mainStoryboardFileName, bundle: Bundle.main)
-        let isLogin:Bool = false
+        let mainStoryBoard = UIStoryboard.init(name: mainStoryboardFileName, bundle: Bundle.main)
+        let isLogin = true
         if isLogin {
             self.window?.rootViewController = mainStoryBoard.instantiateInitialViewController()
         }else{
@@ -91,6 +91,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
+    
+    @available(iOS 13.0, *)
+    func goToRootVC(_ toRoot:Bool) {
+        let mainStoryboardFileName:String = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
+        let mainStoryBoard:UIStoryboard = UIStoryboard.init(name: mainStoryboardFileName, bundle: Bundle.main)
+        self.window?.rootViewController = toRoot ? mainStoryBoard.instantiateInitialViewController():FlatLoginVC.init()
+        self.window?.makeKeyAndVisible()
+    }
 }
 

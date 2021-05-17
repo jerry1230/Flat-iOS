@@ -6,10 +6,10 @@ target 'Flat-iOS' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SnapKit'
-  pod 'Whiteboard'
-  pod 'WechatOpenSDK'
-  pod 'AgoraRtm_iOS', '~> 1.4.5'
-  pod 'AgoraRtcEngine_iOS', '~> 3.4.1'
+#  pod 'Whiteboard'
+#  pod 'WechatOpenSDK'
+#  pod 'AgoraRtm_iOS', '~> 1.4.5'
+#  pod 'AgoraRtcEngine_iOS', '~> 3.4.1'
 
   # Pods for Flat-iOS
 

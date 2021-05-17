@@ -15,7 +15,6 @@
 		8A89A66C264D2D3900ED021E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A66B264D2D3900ED021E /* UIView+Extension.swift */; };
 		8A89A684264D356B00ED021E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A89A683264D356B00ED021E /* Localizable.strings */; };
 		8A89A689264D3E2400ED021E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A688264D3E2400ED021E /* UIColor+Extension.swift */; };
-		8A89A690264D622200ED021E /* FlatUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A68F264D622200ED021E /* FlatUtils.swift */; };
 		8A89A69A264D791E00ED021E /* FlatJoinRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A699264D791E00ED021E /* FlatJoinRoomVC.swift */; };
 		8A89A6A2264D7A1900ED021E /* FlatCreateRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A6A1264D7A1900ED021E /* FlatCreateRoomVC.swift */; };
 		8A89A6A7264D7A2E00ED021E /* FlatOrderRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A6A6264D7A2E00ED021E /* FlatOrderRoomVC.swift */; };
@@ -63,7 +62,6 @@
 		8A89A66B264D2D3900ED021E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8A89A683264D356B00ED021E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8A89A688264D3E2400ED021E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		8A89A68F264D622200ED021E /* FlatUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatUtils.swift; sourceTree = "<group>"; };
 		8A89A699264D791E00ED021E /* FlatJoinRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatJoinRoomVC.swift; sourceTree = "<group>"; };
 		8A89A6A1264D7A1900ED021E /* FlatCreateRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCreateRoomVC.swift; sourceTree = "<group>"; };
 		8A89A6A6264D7A2E00ED021E /* FlatOrderRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatOrderRoomVC.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 		8A89A617264BE1D600ED021E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8A89A68F264D622200ED021E /* FlatUtils.swift */,
 				8A89A6E9264E57D400ED021E /* FlatHttpClient.swift */,
 				8A89A6AB264E4F8A00ED021E /* FlatLoginVC.swift */,
 				8A89A618264BE24500ED021E /* FlatHomeViewController.swift */,
@@ -470,7 +467,6 @@
 				8A89A619264BE24500ED021E /* FlatHomeViewController.swift in Sources */,
 				8A89A667264D0AC300ED021E /* UIScreen+Extensions.swift in Sources */,
 				8A89A6A2264D7A1900ED021E /* FlatCreateRoomVC.swift in Sources */,
-				8A89A690264D622200ED021E /* FlatUtils.swift in Sources */,
 				8A89A6AC264E4F8B00ED021E /* FlatLoginVC.swift in Sources */,
 				8A89A6EA264E57D500ED021E /* FlatHttpClient.swift in Sources */,
 				8A89A621264BE26B00ED021E /* FlatCloudViewController.swift in Sources */,

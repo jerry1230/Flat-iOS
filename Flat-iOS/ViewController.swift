@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Whiteboard
 
 class ViewController: UIViewController {
 

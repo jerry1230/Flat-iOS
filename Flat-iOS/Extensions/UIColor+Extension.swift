@@ -5,8 +5,8 @@
 //  Created by LM on 2021/5/13.
 //
 
-import Foundation
 import UIKit
+
 public extension UIColor {
 
     class func hexColor (hex:String) -> UIColor {
@@ -33,7 +33,7 @@ public extension UIColor {
 
     
     class func flatTextColor() -> UIColor{
-        return UIColor.hexColor(hex: "#444E60")
+        return .hexColor(hex: "#444E60")
     }
     
 }

@@ -24,7 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainStoryboardFileName:String = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
         self.window?.windowScene = windowScene
         let mainStoryBoard:UIStoryboard = UIStoryboard.init(name: mainStoryboardFileName, bundle: Bundle.main)
-        self.window?.rootViewController = mainStoryBoard.instantiateInitialViewController()
+        let isLogin:Bool = false
+        if isLogin {
+            self.window?.rootViewController = mainStoryBoard.instantiateInitialViewController()
+        }else{
+            self.window?.rootViewController = FlatLoginVC.init()
+        }
         self.window?.makeKeyAndVisible()
         
         // Get URL components from the incoming user activity.

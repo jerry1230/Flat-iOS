@@ -97,10 +97,6 @@ final class FlatHomeViewController:UIViewController{
         let vc:FlatOrderRoomVC = FlatOrderRoomVC.init()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
-    
 
 }
 

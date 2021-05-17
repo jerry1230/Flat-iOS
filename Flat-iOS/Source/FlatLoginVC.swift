@@ -14,17 +14,17 @@ class FlatLoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadContentUI()        
+        self.loadContentUI()
     }
     
     func loadContentUI() {
         let image:UIImage = UIImage.init(named: "Login_logo")!
         let imageView:UIImageView = UIImageView.init(image: image)
-        imageView.frame = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: image.size)
+        imageView.frame = CGRect.init(origin: CGPoint.zero, size: image.size)
         self.view.addSubview(imageView)
         imageView.snp.makeConstraints { (maker) in
             maker.size.equalTo(image.size)
-            maker.center.equalTo(view)
+            maker.centerX.equalTo(self.view)
             maker.top.equalTo(view).offset(234)
         }
         
@@ -34,9 +34,9 @@ class FlatLoginVC: UIViewController {
         flatLabel.text = NSLocalizedString("Flat", comment: "")
         self.view.addSubview(flatLabel)
         flatLabel.snp.makeConstraints { (maker) in
-            maker.size.equalTo(CGSize.init(width: 36, height: 43))
+            maker.size.equalTo(CGSize.init(width: 43, height: 36))
             maker.centerX.equalTo(view)
-            maker.top.equalTo(imageView.snp_bottom).offset(112)
+            maker.top.equalTo(imageView.snp_top).offset(112)
         }
         
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 180, height: 24))

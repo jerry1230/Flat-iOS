@@ -12,6 +12,8 @@ class FlatCreateRoomVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Home_create", comment: "")
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.view.backgroundColor = .white
+
     }
 }

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.frame = UIScreen.main.bounds
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController.init(rootViewController: FlatTabbarController.init())
+        window?.rootViewController = UINavigationController(rootViewController: FlatTabbarController())
         return true
     }
 

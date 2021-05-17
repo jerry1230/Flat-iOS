@@ -18,17 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         let windowScene = scene as! UIWindowScene
-        self.window = .init(frame: UIScreen.main.bounds)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
-        
-        let mainStoryboardFileName:String = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
         self.window?.windowScene = windowScene
-        let mainStoryBoard = UIStoryboard.init(name: mainStoryboardFileName, bundle: Bundle.main)
-        let isLogin = true
+        let mainStoryboardFileName = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
+        let mainStoryBoard = UIStoryboard(name: mainStoryboardFileName, bundle: Bundle.main)
+        let isLogin = false
         if isLogin {
             self.window?.rootViewController = mainStoryBoard.instantiateInitialViewController()
         }else{
-            self.window?.rootViewController = FlatLoginVC.init()
+            self.window?.rootViewController = FlatLoginVC()
         }
         self.window?.makeKeyAndVisible()
         
@@ -94,9 +93,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     @available(iOS 13.0, *)
     func goToRootVC(_ toRoot:Bool) {
-        let mainStoryboardFileName:String = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
-        let mainStoryBoard:UIStoryboard = UIStoryboard.init(name: mainStoryboardFileName, bundle: Bundle.main)
-        self.window?.rootViewController = toRoot ? mainStoryBoard.instantiateInitialViewController():FlatLoginVC.init()
+        let mainStoryboardFileName = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
+        let mainStoryBoard = UIStoryboard(name: mainStoryboardFileName, bundle: Bundle.main)
+        self.window?.rootViewController = toRoot ? mainStoryBoard.instantiateInitialViewController():FlatLoginVC()
         self.window?.makeKeyAndVisible()
     }
 }

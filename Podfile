@@ -7,6 +7,7 @@ target 'Flat-iOS' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'Whiteboard'
+  pod 'WechatOpenSDK'
   pod 'AgoraRtm_iOS', '~> 1.4.5'
   pod 'AgoraRtcEngine_iOS', '~> 3.4.1'
 

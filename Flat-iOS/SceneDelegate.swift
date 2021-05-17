@@ -27,7 +27,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = mainStoryBoard.instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
         
-        
+        // Get URL components from the incoming user activity.
+        guard let userActivity = connectionOptions.userActivities.first,
+            userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let incomingURL = userActivity.webpageURL,
+            let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true) else {
+            return
+        }
+
+        // Check for specific URL components that you need.
+        guard let path = components.path,
+            let params = components.queryItems else {
+            return
+        }
+        print("path = \(path)")
+
+        if let albumName = params.first(where: { $0.name == "albumname" })?.value,
+            let photoIndex = params.first(where: { $0.name == "index" })?.value {
+            
+            print("album = \(albumName)")
+            print("photoIndex = \(photoIndex)")
+        } else {
+            print("Either album name or photo index missing")
+        }
 //        guard let _ = (scene as? UIWindowScene) else { return }
 
     }
@@ -64,7 +86,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
 
 }
 

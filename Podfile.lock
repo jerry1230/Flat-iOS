@@ -4,6 +4,7 @@ PODS:
   - Alamofire (4.9.1)
   - dsBridge (3.0.6)
   - SnapKit (4.2.0)
+  - WechatOpenSDK (1.8.7.1)
   - Whiteboard (2.12.22):
     - Whiteboard/Base (= 2.12.22)
     - Whiteboard/Converter (= 2.12.22)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - AgoraRtm_iOS (~> 1.4.5)
   - Alamofire
   - SnapKit
+  - WechatOpenSDK
   - Whiteboard
 
 SPEC REPOS:
@@ -43,6 +45,7 @@ SPEC REPOS:
     - Alamofire
     - dsBridge
     - SnapKit
+    - WechatOpenSDK
     - Whiteboard
     - YYModel
 
@@ -52,9 +55,10 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
   Whiteboard: 1af96f11d08cea541a12266144049b4a8c691ab4
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 0dc996c363ac9e09b4ffd4e95e4b956fb0e112dc
+PODFILE CHECKSUM: 76c59f0996e316a1b7b84638aa2fcad15de8ce94
 
 COCOAPODS: 1.10.1

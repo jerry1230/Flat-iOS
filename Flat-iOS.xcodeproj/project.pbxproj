@@ -19,6 +19,8 @@
 		8A89A69A264D791E00ED021E /* FlatJoinRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A699264D791E00ED021E /* FlatJoinRoomVC.swift */; };
 		8A89A6A2264D7A1900ED021E /* FlatCreateRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A6A1264D7A1900ED021E /* FlatCreateRoomVC.swift */; };
 		8A89A6A7264D7A2E00ED021E /* FlatOrderRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A6A6264D7A2E00ED021E /* FlatOrderRoomVC.swift */; };
+		8A89A6AC264E4F8B00ED021E /* FlatLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A6AB264E4F8A00ED021E /* FlatLoginVC.swift */; };
+		8A89A6EA264E57D500ED021E /* FlatHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A6E9264E57D400ED021E /* FlatHttpClient.swift */; };
 		8ADD7538264B824100B326AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD7537264B824100B326AE /* AppDelegate.swift */; };
 		8ADD753A264B824100B326AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD7539264B824100B326AE /* SceneDelegate.swift */; };
 		8ADD753C264B824100B326AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADD753B264B824100B326AE /* ViewController.swift */; };
@@ -65,6 +67,8 @@
 		8A89A699264D791E00ED021E /* FlatJoinRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatJoinRoomVC.swift; sourceTree = "<group>"; };
 		8A89A6A1264D7A1900ED021E /* FlatCreateRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCreateRoomVC.swift; sourceTree = "<group>"; };
 		8A89A6A6264D7A2E00ED021E /* FlatOrderRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatOrderRoomVC.swift; sourceTree = "<group>"; };
+		8A89A6AB264E4F8A00ED021E /* FlatLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatLoginVC.swift; sourceTree = "<group>"; };
+		8A89A6E9264E57D400ED021E /* FlatHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatHttpClient.swift; sourceTree = "<group>"; };
 		8ADD7534264B824100B326AE /* Flat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD7537264B824100B326AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ADD7539264B824100B326AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				8A89A68F264D622200ED021E /* FlatUtils.swift */,
+				8A89A6E9264E57D400ED021E /* FlatHttpClient.swift */,
+				8A89A6AB264E4F8A00ED021E /* FlatLoginVC.swift */,
 				8A89A618264BE24500ED021E /* FlatHomeViewController.swift */,
 				8A89A620264BE26B00ED021E /* FlatCloudViewController.swift */,
 				8A89A625264BE46900ED021E /* FlatTabbarController.swift */,
@@ -465,6 +471,8 @@
 				8A89A667264D0AC300ED021E /* UIScreen+Extensions.swift in Sources */,
 				8A89A6A2264D7A1900ED021E /* FlatCreateRoomVC.swift in Sources */,
 				8A89A690264D622200ED021E /* FlatUtils.swift in Sources */,
+				8A89A6AC264E4F8B00ED021E /* FlatLoginVC.swift in Sources */,
+				8A89A6EA264E57D500ED021E /* FlatHttpClient.swift in Sources */,
 				8A89A621264BE26B00ED021E /* FlatCloudViewController.swift in Sources */,
 				8A89A69A264D791E00ED021E /* FlatJoinRoomVC.swift in Sources */,
 				8A89A626264BE46900ED021E /* FlatTabbarController.swift in Sources */,
@@ -655,7 +663,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.agora.netless.Flat-iOS";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.flat.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -676,7 +685,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.agora.netless.Flat-iOS";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.flat.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

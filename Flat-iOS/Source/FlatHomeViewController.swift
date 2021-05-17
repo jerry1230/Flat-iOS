@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 final class FlatHomeViewController:UIViewController{
+    var tableView:UITableView = UITableView.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Flat_home", comment: "")
@@ -75,6 +77,9 @@ final class FlatHomeViewController:UIViewController{
             maker.top.equalToSuperview().offset(72 + STATUSBAR_HEIGHT)
             maker.width.height.equalTo(44)
         }
+        
+        
+        
     }
     
     
@@ -92,6 +97,10 @@ final class FlatHomeViewController:UIViewController{
         let vc:FlatOrderRoomVC = FlatOrderRoomVC.init()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+    
+    
 
 }
 

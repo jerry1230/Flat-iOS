@@ -11,8 +11,92 @@ class FlatJoinRoomVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
         self.view.backgroundColor = .white
         self.navigationItem.title = NSLocalizedString("Home_join", comment: "")
+        
+        let roomNumberLB = UILabel(frame: CGRect(x: 16, y: 16, width: 45, height: 22))
+        roomNumberLB.font = .systemFont(ofSize: 14)
+        roomNumberLB.textColor = .hexColor(hex: "#7A7B7C")
+        roomNumberLB.text = NSLocalizedString("Join_id", comment: "")
+        self.view.addSubview(roomNumberLB)
+        roomNumberLB.snp.makeConstraints { maker in
+            maker.left.top.equalTo(16)
+            maker.size.equalTo(CGSize(width: 45, height: 21))
+        }
+        
+        let roomNumberTF = UITextField()
+        roomNumberTF.font = .systemFont(ofSize: 16)
+        roomNumberTF.textColor = .hexColor(hex: "#444E60")
+        roomNumberTF.tintColor = .hexColor(hex: "#444E60")
+        roomNumberTF.placeholder = NSLocalizedString("Join_tfnumber", comment: "")
+        roomNumberTF.borderStyle = .roundedRect
+        self.view.addSubview(roomNumberTF)
+        roomNumberTF.snp.makeConstraints { maker in
+            maker.left.right.equalToSuperview().offset(16)
+            maker.top.equalTo(46)
+            maker.height.equalTo(48)
+        }
+        
+        
+        let nickNameLB = UILabel(frame: CGRect(x: 16, y: 16, width: 45, height: 22))
+        nickNameLB.font = .systemFont(ofSize: 14)
+        nickNameLB.textColor = .hexColor(hex: "#7A7B7C")
+        nickNameLB.text = NSLocalizedString("Join_nickname", comment: "")
+        self.view.addSubview(nickNameLB)
+        nickNameLB.snp.makeConstraints { maker in
+            maker.left.equalTo(16)
+            maker.right.equalTo(-16)
+            maker.top.equalTo(110)
+            maker.size.equalTo(CGSize(width: 45, height: 21))
+        }
+        
+        let nickNameTF = UITextField()
+        nickNameTF.font = .systemFont(ofSize: 16)
+        nickNameTF.textColor = .hexColor(hex: "#444E60")
+        nickNameTF.tintColor = .hexColor(hex: "#444E60")
+        nickNameTF.borderStyle = .roundedRect
+        nickNameTF.placeholder = NSLocalizedString("Join_tfname", comment: "")
+        self.view.addSubview(nickNameTF)
+        nickNameTF.snp.makeConstraints { maker in
+            maker.left.right.equalTo(16)
+            maker.right.equalTo(-16)
+            maker.top.equalTo(140)
+            maker.height.equalTo(48)
+        }
+        
+        let joinLB = UILabel(frame: CGRect(x: 16, y: 16, width: 45, height: 22))
+        joinLB.font = .systemFont(ofSize: 14)
+        joinLB.textColor = .hexColor(hex: "#7A7B7C")
+        joinLB.text = NSLocalizedString("Join_join", comment: "")
+        self.view.addSubview(joinLB)
+        joinLB.snp.makeConstraints { maker in
+            maker.left.equalTo(16)
+            maker.top.equalTo(204)
+            maker.size.equalTo(CGSize(width: 60, height: 22))
+        }
+        
+        let micLB = UILabel()
+        micLB.font = .systemFont(ofSize: 14)
+        micLB.textColor = .hexColor(hex: "#7A7B7C")
+        micLB.text = NSLocalizedString("Join_mic", comment: "")
+        self.view.addSubview(micLB)
+        micLB.snp.makeConstraints { maker in
+            maker.left.equalTo(40)
+            maker.top.equalTo(238)
+            maker.size.equalTo(CGSize(width: 72, height: 24))
+        }
+        
+        let cameraLB = UILabel()
+        cameraLB.font = .systemFont(ofSize: 14)
+        cameraLB.textColor = .hexColor(hex: "#7A7B7C")
+        cameraLB.text = NSLocalizedString("Join_camera", comment: "")
+        self.view.addSubview(cameraLB)
+        cameraLB.snp.makeConstraints { maker in
+            maker.left.equalTo(166)
+            maker.top.equalTo(238)
+            maker.size.equalTo(CGSize(width: 72, height: 24))
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

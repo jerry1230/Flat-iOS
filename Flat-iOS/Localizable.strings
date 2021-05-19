@@ -17,3 +17,10 @@
 "Home_order" = "预定房间";
 "Home_list" = "房间列表";
 "Home_history" = "历史记录";
+"Join_id" = "房间号";
+"Join_tfnumber" = "请输入房间号";
+"Join_nickname" = "昵称";
+"Join_tfname" = "请输入昵称";
+"Join_join" = "加入选项";
+"Join_mic" = "开启麦克风";
+"Join_camera" = "开启摄像头";

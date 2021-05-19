@@ -12,7 +12,8 @@ final class FlatTabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadViewControllers()
-        self.setTabbar()
+        self.tabBar.tintColor = .white
+        self.tabBar.barTintColor = .hexColor(hex: "#1A1E21")
     }
     
     func loadViewControllers() {
@@ -25,8 +26,4 @@ final class FlatTabbarController: UITabBarController {
         self.viewControllers = [homeNC,cloudNC]
     }
 
-    func setTabbar(){
-        self.tabBar.tintColor = .white
-        self.tabBar.barTintColor = .hexColor(hex: "#1A1E21")
-    }
 }

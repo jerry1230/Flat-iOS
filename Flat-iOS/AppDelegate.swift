@@ -9,15 +9,12 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var window: UIWindow?
-    
+    let window = UIWindow()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        window?.backgroundColor = UIColor.white
-        window?.frame = UIScreen.main.bounds
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: FlatTabbarController())
+        window.backgroundColor = .white
+        window.frame = UIScreen.main.bounds
+        window.makeKeyAndVisible()
+        window.rootViewController = UINavigationController(rootViewController: FlatTabbarController())
         return true
     }
 

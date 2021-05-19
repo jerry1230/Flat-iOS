@@ -17,7 +17,7 @@ public extension UIColor {
         }
 
         if ((cString.count) != 6) {
-            return UIColor.gray
+            return .gray
         }
 
         var rgbValue:UInt64 = 0

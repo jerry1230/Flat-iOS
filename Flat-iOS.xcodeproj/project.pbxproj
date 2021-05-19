@@ -81,6 +81,7 @@
 		8ADD7555264B824500B326AE /* Flat-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flat-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ADD7559264B824500B326AE /* Flat_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flat_iOSUITests.swift; sourceTree = "<group>"; };
 		8ADD755B264B824500B326AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AE1EBB8265362FD00E1440E /* Flat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flat-Prefix.pch"; sourceTree = "<group>"; };
 		9B9AA438BA5B9F901369264B /* Pods_Flat_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flat_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A169E20A1C72E0FAF5434FA7 /* Pods_Flat_iOS_Flat_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flat_iOS_Flat_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF03C7E1E0C23AD56762F56 /* Pods-Flat-iOS-Flat-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flat-iOS-Flat-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flat-iOS-Flat-iOSUITests/Pods-Flat-iOS-Flat-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,14 +168,15 @@
 			children = (
 				8A89A662264D055800ED021E /* Extensions */,
 				8A89A617264BE1D600ED021E /* Source */,
-				8ADD7537264B824100B326AE /* AppDelegate.swift */,
 				8ADD7539264B824100B326AE /* SceneDelegate.swift */,
+				8ADD7537264B824100B326AE /* AppDelegate.swift */,
 				8ADD753B264B824100B326AE /* ViewController.swift */,
 				8ADD753D264B824100B326AE /* Main.storyboard */,
 				8ADD7540264B824400B326AE /* Assets.xcassets */,
 				8ADD7542264B824400B326AE /* LaunchScreen.storyboard */,
 				8ADD7545264B824400B326AE /* Info.plist */,
 				8A89A683264D356B00ED021E /* Localizable.strings */,
+				8AE1EBB8265362FD00E1440E /* Flat-Prefix.pch */,
 			);
 			path = "Flat-iOS";
 			sourceTree = "<group>";
@@ -579,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -635,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -654,12 +656,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7S2687476;
 				INFOPLIST_FILE = "Flat-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.flat.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -676,12 +679,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7S2687476;
 				INFOPLIST_FILE = "Flat-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.flat.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -739,7 +743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDF03C7E1E0C23AD56762F56 /* Pods-Flat-iOS-Flat-iOSUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7S2687476;
 				INFOPLIST_FILE = "Flat-iOSUITests/Info.plist";
@@ -748,6 +752,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.agora.netless.Flat-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -760,7 +765,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3CC12C1FBF78C3CC792523DA /* Pods-Flat-iOS-Flat-iOSUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S7S2687476;
 				INFOPLIST_FILE = "Flat-iOSUITests/Info.plist";
@@ -769,6 +774,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.agora.netless.Flat-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

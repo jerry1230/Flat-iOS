@@ -22,19 +22,20 @@ final class FlatHomeViewController: UIViewController {
     var curList:ListType = .RoomList
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
         if #available(iOS 11.0, *) {
             self.navigationItem.title = NSLocalizedString("Flat_home", comment: "")
-            self.navigationItem.largeTitleDisplayMode = .always
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.largeTitleTextAttributes = [.font : UIFont.boldSystemFont(ofSize: 34)]
         } else {
-            let titleLabel = UILabel(frame: CGRect(x: 16, y: 16 + STATUSBAR_HEIGHT, width: 50, height: 24))
-            titleLabel.font = .boldSystemFont(ofSize: 20)
-            titleLabel.textColor = .flatTextColor()
-            titleLabel.backgroundColor = .white
-            titleLabel.text = NSLocalizedString("Flat_home", comment: "")
-            self.view.addSubview(titleLabel)
+            
+            self.title = NSLocalizedString("Flat_home", comment: "")
+            
+//            let titleLabel = UILabel(frame: CGRect(x: 16, y: 16 + STATUSBAR_HEIGHT, width: 70, height: 48))
+//            titleLabel.font = .boldSystemFont(ofSize: 20)
+//            titleLabel.textColor = .flatTextColor()
+//            titleLabel.backgroundColor = .white
+//            titleLabel.text = NSLocalizedString("Flat_home", comment: "")
+//            self.view.addSubview(titleLabel)
         }
         
         self.view.addSubview(self.tableView)
@@ -44,8 +45,16 @@ final class FlatHomeViewController: UIViewController {
         self.loadTableHeader()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
+    }
+    
     func loadTableHeader() {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 110))//
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 110))
+        headerView.bottomBorder(width: 1, borderColor: .hexColor(hex: "#DBE1EA"))
         self.tableView.tableHeaderView = headerView
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -231,4 +240,28 @@ extension FlatHomeViewController: UITableViewDataSource {
         return 48
     }
     
+    
+    
+}
+
+
+extension UIViewController {
+    @available(iOS 11.0, *)
+    func setLargeTitleDisplayMode(_ largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode) {
+        switch largeTitleDisplayMode {
+        case .automatic:
+              guard let navigationController = navigationController else { break }
+            if let index = navigationController.children.firstIndex(of: self) {
+                setLargeTitleDisplayMode(index == 0 ? .always : .never)
+            } else {
+                setLargeTitleDisplayMode(.always)
+            }
+        case .always, .never:
+            navigationItem.largeTitleDisplayMode = largeTitleDisplayMode
+            // Even when .never, needs to be true otherwise animation will be broken on iOS11, 12, 13
+            navigationController?.navigationBar.prefersLargeTitles = true
+        @unknown default:
+            assertionFailure("\(#function): Missing handler for \(largeTitleDisplayMode)")
+        }
+    }
 }

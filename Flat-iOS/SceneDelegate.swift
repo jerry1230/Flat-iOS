@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.windowScene = windowScene
         let mainStoryboardFileName = Bundle.main.infoDictionary?["UIMainStoryboardFile"] as! String
         let mainStoryBoard = UIStoryboard(name: mainStoryboardFileName, bundle: Bundle.main)
-        let isLogin = true
+        let isLogin = false
         if isLogin {
             self.window?.rootViewController = mainStoryBoard.instantiateInitialViewController()
         }else{

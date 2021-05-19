@@ -11,11 +11,15 @@ class FlatJoinRoomVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("Home_join", comment: "")
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.view.backgroundColor = .white
+        self.navigationItem.title = NSLocalizedString("Home_join", comment: "")
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+        }
+    }
     
 }

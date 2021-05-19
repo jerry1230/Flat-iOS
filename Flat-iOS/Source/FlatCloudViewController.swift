@@ -18,17 +18,34 @@ final class FlatCloudViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        let titleLabel = UILabel(frame: CGRect(x: 16, y: 16 + STATUSBAR_HEIGHT, width: 50, height: 24))
-        titleLabel.font = .boldSystemFont(ofSize: 20)
-        titleLabel.textColor = .flatTextColor()
-        titleLabel.backgroundColor = .white
-        titleLabel.text = NSLocalizedString("Flat_cloud", comment: "")
-        self.view.addSubview(titleLabel)
-
+        if #available(iOS 11.0, *) {
+            self.navigationItem.title = NSLocalizedString("Flat_cloud", comment: "")
+            self.navigationItem.largeTitleDisplayMode = .always
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [.font : UIFont.boldSystemFont(ofSize: 34)]
+        } else {
+            
+            self.title = NSLocalizedString("Flat_cloud", comment: "")
+            
+//            let titleLabel = UILabel(frame: CGRect(x: 16, y: 16 + STATUSBAR_HEIGHT, width: 70, height: 48))
+//            titleLabel.font = .boldSystemFont(ofSize: 20)
+//            titleLabel.textColor = .flatTextColor()
+//            titleLabel.backgroundColor = .white
+//            titleLabel.text = NSLocalizedString("Flat_home", comment: "")
+//            self.view.addSubview(titleLabel)
+            
+            
+            
+            
+        }
     }
     
-   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
+    }
     
    
 }

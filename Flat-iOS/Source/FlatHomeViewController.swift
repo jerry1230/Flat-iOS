@@ -17,7 +17,7 @@ final class FlatHomeViewController: UIViewController {
     }
     
     let STATUSBAR_HEIGHT = UIApplication.shared.statusBarFrame.height
-    let tableView = UITableView.init()
+    let tableView = UITableView()
     let selectLine = UIView(frame: .zero)
     var curList:ListType = .RoomList
     override func viewDidLoad() {

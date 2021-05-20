@@ -41,7 +41,7 @@ class FlatCreateRoomVC: UIViewController {
         themeTF.borderStyle = .roundedRect
         self.view.addSubview(themeTF)
         themeTF.snp.makeConstraints { maker in
-            maker.left.right.equalToSuperview().offset(16)
+            maker.left.equalToSuperview().offset(16)
             maker.right.equalToSuperview().offset(-16)
             maker.top.equalTo(46)
             maker.height.equalTo(48)
@@ -90,8 +90,9 @@ class FlatCreateRoomVC: UIViewController {
             let classStateBtn = UIButton(type: .custom)
             classStateBtn.isSelected = index == 0 ? true : false
             classStateBtn.tag = btnBaseTag + index
-            classStateBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
-            classStateBtn.setImage(UIImage(named: "Btn_join"), for: .selected)
+            classStateBtn.isUserInteractionEnabled = false
+            classStateBtn.setImage(UIImage(named: "round_unselect"), for: .normal)
+            classStateBtn.setImage(UIImage(named: "round_select"), for: .selected)
             self.view.addSubview(classStateBtn)
             classStateBtn.snp.makeConstraints { (maker) in
                 maker.left.equalToSuperview().offset(120 * index + 60)
@@ -112,8 +113,8 @@ class FlatCreateRoomVC: UIViewController {
         }
         
         let videoSelectBtn = UIButton(type: .custom)
-        videoSelectBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
-        videoSelectBtn.setImage(UIImage(named: "Btn_join"), for: .selected)
+        videoSelectBtn.setImage(UIImage(named: "checkbox"), for: .normal)
+        videoSelectBtn.setImage(UIImage(named: "checkbox_y"), for: .selected)
         videoSelectBtn.addTarget(self, action: #selector(videoSelectAction), for: .touchUpInside)
         self.view.addSubview(videoSelectBtn)
         videoSelectBtn.snp.makeConstraints { (maker) in

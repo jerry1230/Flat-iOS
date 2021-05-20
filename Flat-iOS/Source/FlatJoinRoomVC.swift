@@ -32,7 +32,8 @@ class FlatJoinRoomVC: UIViewController {
         roomNumberTF.borderStyle = .roundedRect
         self.view.addSubview(roomNumberTF)
         roomNumberTF.snp.makeConstraints { maker in
-            maker.left.right.equalToSuperview().offset(16)
+            maker.left.equalToSuperview().offset(16)
+            maker.right.equalToSuperview().offset(-16)
             maker.top.equalTo(46)
             maker.height.equalTo(48)
         }
@@ -45,7 +46,6 @@ class FlatJoinRoomVC: UIViewController {
         self.view.addSubview(nickNameLB)
         nickNameLB.snp.makeConstraints { maker in
             maker.left.equalTo(16)
-            maker.right.equalTo(-16)
             maker.top.equalTo(110)
             maker.size.equalTo(CGSize(width: 45, height: 21))
         }
@@ -58,7 +58,7 @@ class FlatJoinRoomVC: UIViewController {
         nickNameTF.placeholder = NSLocalizedString("Join_tfname", comment: "")
         self.view.addSubview(nickNameTF)
         nickNameTF.snp.makeConstraints { maker in
-            maker.left.right.equalTo(16)
+            maker.left.equalTo(16)
             maker.right.equalTo(-16)
             maker.top.equalTo(140)
             maker.height.equalTo(48)
@@ -98,8 +98,8 @@ class FlatJoinRoomVC: UIViewController {
         }
         
         let micSelectBtn = UIButton(type: .custom)
-        micSelectBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
-        micSelectBtn.setImage(UIImage(named: "Btn_join"), for: .selected)
+        micSelectBtn.setImage(UIImage(named: "checkbox"), for: .normal)
+        micSelectBtn.setImage(UIImage(named: "checkbox_y"), for: .selected)
         micSelectBtn.addTarget(self, action: #selector(micSelectAction), for: .touchUpInside)
         self.view.addSubview(micSelectBtn)
         micSelectBtn.snp.makeConstraints { (maker) in
@@ -109,8 +109,8 @@ class FlatJoinRoomVC: UIViewController {
         }
         
         let videoSelectBtn = UIButton(type: .custom)
-        videoSelectBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
-        videoSelectBtn.setImage(UIImage(named: "Btn_join"), for: .selected)
+        videoSelectBtn.setImage(UIImage(named: "checkbox"), for: .normal)
+        videoSelectBtn.setImage(UIImage(named: "checkbox_y"), for: .selected)
         videoSelectBtn.addTarget(self, action: #selector(videoSelectAction), for: .touchUpInside)
         self.view.addSubview(videoSelectBtn)
         videoSelectBtn.snp.makeConstraints { (maker) in

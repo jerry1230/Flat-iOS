@@ -24,3 +24,11 @@
 "Join_join" = "加入选项";
 "Join_mic" = "开启麦克风";
 "Join_camera" = "开启摄像头";
+"Join_btnjoin" = "加入";
+"Create_theme" = "主题";
+"Create_tftheme" = "请输入房间主题";
+"Create_type" = "类型";
+"Create_oneclass" = "一对一";
+"Create_bigclass" = "大班课";
+"Create_smallclass" = "小班课";
+"Create_create" = "创建";

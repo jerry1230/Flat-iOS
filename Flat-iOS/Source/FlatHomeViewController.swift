@@ -127,16 +127,19 @@ final class FlatHomeViewController: UIViewController {
     
     @objc func joinRoomAction() {
         let vc = FlatJoinRoomVC()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc func createRoomAction() {
         let vc = FlatCreateRoomVC()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc func orderRoomAction() {
         let vc = FlatOrderRoomVC()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

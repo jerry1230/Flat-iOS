@@ -8,14 +8,13 @@
 import UIKit
 
 class FlatJoinRoomVC: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
         self.view.backgroundColor = .white
         self.navigationItem.title = NSLocalizedString("Home_join", comment: "")
         
-        let roomNumberLB = UILabel(frame: CGRect(x: 16, y: 16, width: 45, height: 22))
+        let roomNumberLB = UILabel(frame: CGRect())
         roomNumberLB.font = .systemFont(ofSize: 14)
         roomNumberLB.textColor = .hexColor(hex: "#7A7B7C")
         roomNumberLB.text = NSLocalizedString("Join_id", comment: "")
@@ -39,7 +38,7 @@ class FlatJoinRoomVC: UIViewController {
         }
         
         
-        let nickNameLB = UILabel(frame: CGRect(x: 16, y: 16, width: 45, height: 22))
+        let nickNameLB = UILabel()
         nickNameLB.font = .systemFont(ofSize: 14)
         nickNameLB.textColor = .hexColor(hex: "#7A7B7C")
         nickNameLB.text = NSLocalizedString("Join_nickname", comment: "")
@@ -65,7 +64,7 @@ class FlatJoinRoomVC: UIViewController {
             maker.height.equalTo(48)
         }
         
-        let joinLB = UILabel(frame: CGRect(x: 16, y: 16, width: 45, height: 22))
+        let joinLB = UILabel()
         joinLB.font = .systemFont(ofSize: 14)
         joinLB.textColor = .hexColor(hex: "#7A7B7C")
         joinLB.text = NSLocalizedString("Join_join", comment: "")
@@ -97,6 +96,42 @@ class FlatJoinRoomVC: UIViewController {
             maker.top.equalTo(238)
             maker.size.equalTo(CGSize(width: 72, height: 24))
         }
+        
+        let micSelectBtn = UIButton(type: .custom)
+        micSelectBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
+        micSelectBtn.setImage(UIImage(named: "Btn_join"), for: .selected)
+        micSelectBtn.addTarget(self, action: #selector(micSelectAction), for: .touchUpInside)
+        self.view.addSubview(micSelectBtn)
+        micSelectBtn.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(8)
+            maker.top.equalTo(joinLB.snp.bottom).offset(8)
+            maker.size.equalTo(CGSize(width: 32, height: 32))
+        }
+        
+        let videoSelectBtn = UIButton(type: .custom)
+        videoSelectBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
+        videoSelectBtn.setImage(UIImage(named: "Btn_join"), for: .selected)
+        videoSelectBtn.addTarget(self, action: #selector(videoSelectAction), for: .touchUpInside)
+        self.view.addSubview(videoSelectBtn)
+        videoSelectBtn.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(134)
+            maker.top.equalTo(joinLB.snp.bottom).offset(8)
+            maker.size.equalTo(CGSize(width: 32, height: 32))
+        }
+        
+        let joinRoomBtn = UIButton(type: .custom)
+        joinRoomBtn.setTitle(NSLocalizedString("Join_btnjoin", comment: ""), for: .normal)
+        joinRoomBtn.backgroundColor = .hexColor(hex: "#3381FF")
+        joinRoomBtn.titleLabel?.font = .systemFont(ofSize: 16)
+        joinRoomBtn.addTarget(self, action: #selector(joinRoomAction), for: .touchUpInside)
+        joinRoomBtn.makeCornerRadius()
+        self.view.addSubview(joinRoomBtn)
+        joinRoomBtn.snp.makeConstraints { (maker) in
+            maker.left.equalToSuperview().offset(16)
+            maker.right.equalToSuperview().offset(-16)
+            maker.bottom.equalToSuperview().offset(-32)
+            maker.height.equalTo(40)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,6 +139,18 @@ class FlatJoinRoomVC: UIViewController {
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
+    }
+    
+    @objc func micSelectAction(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+    }
+    
+    @objc func videoSelectAction(_ button: UIButton) {
+        button.isSelected = !button.isSelected
+    }
+    
+    @objc func joinRoomAction() {
+        
     }
     
 }

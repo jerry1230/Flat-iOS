@@ -81,12 +81,14 @@ final class FlatHomeViewController: UIViewController {
 //            titleLabel.text = NSLocalizedString("Flat_home", comment: "")
 //            self.view.addSubview(titleLabel)
         }
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.loadTableHeader()
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
-        self.loadTableHeader()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,75 +100,48 @@ final class FlatHomeViewController: UIViewController {
     
     func loadTableHeader() {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 110))
-        headerView.bottomBorder(width: 1, borderColor: .hexColor(hex: "#DBE1EA"))
+        let lineView = UIView()
+        lineView.backgroundColor = .hexColor(hex: "#DBE1EA")
+        headerView.addSubview(lineView)
+        lineView.snp.makeConstraints { maker in
+            maker.left.right.bottom.equalTo(0)
+            maker.height.equalTo(1)
+        }
+        
+        let imgArray:[String] = ["Btn_join", "Btn_create", "Btn_order"]
+        let nameArray:[String] = ["Home_join", "Home_create", "Home_order"]
+        let selectorArray:[Selector] = [#selector(joinRoomAction), #selector(createRoomAction), #selector(orderRoomAction)]
+
+        for index in 0...2 {
+            let joinRoomBtn = UIButton(type: .custom)
+            joinRoomBtn.size = CGSize(width: 60, height: 70)
+            joinRoomBtn.setTitle(NSLocalizedString(nameArray[index], comment: ""), for: .normal)
+            joinRoomBtn.setTitleColor(.hexColor(hex: "#444E60"), for: .normal)
+            joinRoomBtn.titleLabel?.font = .systemFont(ofSize: 12)
+            let rect = joinRoomBtn.titleRect(forContentRect: joinRoomBtn.contentRect(forBounds:joinRoomBtn.bounds))
+            joinRoomBtn.setImage(UIImage(named: imgArray[index]), for: .normal)
+            joinRoomBtn.contentVerticalAlignment = .top
+            joinRoomBtn.contentHorizontalAlignment = .left
+            joinRoomBtn.imageEdgeInsets = UIEdgeInsets(top: 0, left: 7.5, bottom: 0, right: -7.5)
+            let labe_l = (joinRoomBtn.size.width - rect.size.width) / 2
+            joinRoomBtn.titleEdgeInsets = UIEdgeInsets(top: 52, left: -(44 - labe_l), bottom: -52, right: labe_l)
+            joinRoomBtn.addTarget(self, action: selectorArray[index], for: .touchUpInside)
+            headerView.addSubview(joinRoomBtn)
+            
+            joinRoomBtn.snp.makeConstraints { (maker) in
+                if index == 0{
+                    maker.left.equalToSuperview().offset(38)
+                }else if(index == 1){
+                    maker.centerX.equalToSuperview()
+                }else{
+                    maker.right.equalToSuperview().offset(-38)
+                }
+                maker.top.equalToSuperview().offset(16)
+                maker.width.equalTo(60)
+                maker.height.equalTo(70)
+            }
+        }
         self.tableView.tableHeaderView = headerView
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-
-        let joinRoomBtn = UIButton(type: .custom)
-        joinRoomBtn.setImage(UIImage(named: "Btn_join"), for: .normal)
-        joinRoomBtn.addTarget(self, action: #selector(joinRoomAction), for: .touchUpInside)
-        headerView.addSubview(joinRoomBtn)
-        joinRoomBtn.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(41)
-            maker.top.equalToSuperview().offset(16)
-            maker.width.height.equalTo(44)
-        }
-
-        let joinRoomLabel = UILabel()
-        joinRoomLabel.text = NSLocalizedString("Home_join", comment: "")
-        joinRoomLabel.font = .systemFont(ofSize: 12)
-        joinRoomLabel.textColor = .hexColor(hex: "#444E60")
-        headerView.addSubview(joinRoomLabel)
-        joinRoomLabel.snp.makeConstraints { maker in
-            maker.centerX.equalTo(joinRoomBtn.snp.centerX)
-            maker.top.equalTo(joinRoomBtn.snp.bottom).offset(8)
-            maker.size.equalTo(CGSize(width: 50, height: 18))
-        }
-        
-
-        let createRoomBtn = UIButton(type: .custom)
-        createRoomBtn.setImage(UIImage(named: "Btn_create"), for: .normal)
-        createRoomBtn.addTarget(self, action: #selector(createRoomAction), for: .touchUpInside)
-        headerView.addSubview(createRoomBtn)
-        createRoomBtn.snp.makeConstraints { (maker) in
-            maker.centerX.equalToSuperview()
-            maker.top.equalToSuperview().offset(16)
-            maker.width.height.equalTo(44)
-        }
-        
-        let createRoomLabel = UILabel()
-        createRoomLabel.text = NSLocalizedString("Home_create", comment: "")
-        createRoomLabel.font = .systemFont(ofSize: 12)
-        createRoomLabel.textColor = .hexColor(hex: "#444E60")
-        headerView.addSubview(createRoomLabel)
-        createRoomLabel.snp.makeConstraints { maker in
-            maker.centerX.equalTo(createRoomBtn.snp.centerX)
-            maker.top.equalTo(createRoomBtn.snp.bottom).offset(8)
-            maker.size.equalTo(CGSize(width: 50, height: 18))
-        }
-
-
-        let orderRoomBtn = UIButton(type: .custom)
-        orderRoomBtn.setImage(UIImage(named: "Btn_order"), for: .normal)
-        orderRoomBtn.addTarget(self, action: #selector(orderRoomAction), for: .touchUpInside)
-        headerView.addSubview(orderRoomBtn)
-        orderRoomBtn.snp.makeConstraints { (maker) in
-            maker.right.equalToSuperview().offset(-41)
-            maker.top.equalToSuperview().offset(16)
-            maker.width.height.equalTo(44)
-        }
-        
-        let orderRoomLabel = UILabel()
-        orderRoomLabel.text = NSLocalizedString("Home_order", comment: "")
-        orderRoomLabel.font = .systemFont(ofSize: 12)
-        orderRoomLabel.textColor = .hexColor(hex: "#444E60")
-        headerView.addSubview(orderRoomLabel)
-        orderRoomLabel.snp.makeConstraints { maker in
-            maker.centerX.equalTo(orderRoomBtn.snp.centerX)
-            maker.top.equalTo(orderRoomBtn.snp.bottom).offset(8)
-            maker.size.equalTo(CGSize(width: 50, height: 18))
-        }
     }
     
     func loadBlueLine() {

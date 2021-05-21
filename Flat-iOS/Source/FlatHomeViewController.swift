@@ -83,6 +83,7 @@ final class FlatHomeViewController: UIViewController {
         }
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.showsVerticalScrollIndicator = false
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.loadTableHeader()
         self.view.addSubview(self.tableView)
@@ -130,13 +131,13 @@ final class FlatHomeViewController: UIViewController {
             
             joinRoomBtn.snp.makeConstraints { (maker) in
                 if index == 0{
-                    maker.left.equalToSuperview().offset(38)
+                    maker.left.equalToSuperview().inset(38)
                 }else if(index == 1){
                     maker.centerX.equalToSuperview()
                 }else{
-                    maker.right.equalToSuperview().offset(-38)
+                    maker.right.equalToSuperview().inset(38)
                 }
-                maker.top.equalToSuperview().offset(16)
+                maker.top.equalToSuperview().inset(16)
                 maker.width.equalTo(60)
                 maker.height.equalTo(70)
             }

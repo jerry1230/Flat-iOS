@@ -7,15 +7,15 @@
 
 import UIKit
 
+public enum RoomType:Int {
+    case miniClass = 100
+    case bigClass = 101
+    case smallClass = 102
+}
+let btnBaseTag = 200
+
 class FlatCreateRoomVC: UIViewController {
-    let btnBaseTag = 200
     var curRoomType = RoomType.miniClass
-    
-    public enum RoomType:Int {
-        case miniClass = 100
-        case bigClass = 101
-        case smallClass = 102
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +41,7 @@ class FlatCreateRoomVC: UIViewController {
         themeTF.borderStyle = .roundedRect
         self.view.addSubview(themeTF)
         themeTF.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(16)
-            maker.right.equalToSuperview().offset(-16)
+            maker.left.right.equalToSuperview().inset(16)
             maker.top.equalTo(46)
             maker.height.equalTo(48)
         }
@@ -82,8 +81,8 @@ class FlatCreateRoomVC: UIViewController {
             classBtn.addTarget(self, action: #selector(classSelectedAction), for: .touchUpInside)
             self.view.addSubview(classBtn)
             classBtn.snp.makeConstraints { (maker) in
-                maker.left.equalToSuperview().offset(120 * index + 16 )
-                maker.top.equalToSuperview().offset(140)
+                maker.left.equalToSuperview().inset(120 * index + 16 )
+                maker.top.equalToSuperview().inset(140)
                 maker.size.equalTo(CGSize(width: 104, height: 140))
             }
             
@@ -95,7 +94,7 @@ class FlatCreateRoomVC: UIViewController {
             classStateBtn.setImage(UIImage(named: "round_select"), for: .selected)
             self.view.addSubview(classStateBtn)
             classStateBtn.snp.makeConstraints { (maker) in
-                maker.left.equalToSuperview().offset(120 * index + 60)
+                maker.left.equalToSuperview().inset(120 * index + 60)
                 maker.top.equalTo(classBtn.snp.bottom).offset(16)
                 maker.size.equalTo(CGSize(width: 16, height: 16))
             }
@@ -118,7 +117,7 @@ class FlatCreateRoomVC: UIViewController {
         videoSelectBtn.addTarget(self, action: #selector(videoSelectAction), for: .touchUpInside)
         self.view.addSubview(videoSelectBtn)
         videoSelectBtn.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(8)
+            maker.left.equalToSuperview().inset(8)
             maker.top.equalTo(joinSettingLB.snp.bottom).offset(8)
             maker.size.equalTo(CGSize(width: 32, height: 32))
         }
@@ -142,9 +141,8 @@ class FlatCreateRoomVC: UIViewController {
         joinRoomBtn.makeCornerRadius()
         self.view.addSubview(joinRoomBtn)
         joinRoomBtn.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(16)
-            maker.right.equalToSuperview().offset(-16)
-            maker.bottom.equalToSuperview().offset(-32)
+            maker.left.right.equalToSuperview().inset(16)
+            maker.bottom.equalToSuperview().inset(32)
             maker.height.equalTo(40)
         }
     }

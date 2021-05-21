@@ -39,23 +39,20 @@ final class FlatCloudViewController: UIViewController {
         headerView.addSubview(self.deleteBtn)
 
         self.storageLabel.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(16)
-            maker.top.equalToSuperview().offset(12)
-            maker.bottom.equalToSuperview().offset(-12)
+            maker.left.equalToSuperview().inset(16)
+            maker.top.bottom.equalToSuperview().inset(12)
             maker.width.equalTo(120)
         }
         
         editBtn.snp.makeConstraints { maker in
-            maker.right.equalToSuperview().offset(-16)
-            maker.top.equalToSuperview().offset(12)
-            maker.height.equalTo(24)
+            maker.right.equalToSuperview().inset(16)
+            maker.top.bottom.equalToSuperview().inset(12)
             maker.width.equalTo(61)
         }
         
         self.deleteBtn.snp.makeConstraints { maker in
-            maker.right.equalToSuperview().offset(-92)
-            maker.top.equalToSuperview().offset(12)
-            maker.height.equalTo(24)
+            maker.right.equalToSuperview().inset(92)
+            maker.top.bottom.equalToSuperview().inset(12)
             maker.width.equalTo(61)
         }
         return headerView
@@ -168,9 +165,8 @@ public class FlatCloudCell: UITableViewCell{
         self.checkboxBtn.setImage(UIImage(named: "checkbox_y"), for: .selected)
         self.contentView.addSubview(self.checkboxBtn)
         self.checkboxBtn.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(18)
-            make.bottom.equalToSuperview().offset(-18)
-            make.right.equalToSuperview().offset(-8)
+            make.top.bottom.equalToSuperview().inset(18)
+            make.right.equalToSuperview().inset(8)
             make.width.equalTo(32)
         }
     }

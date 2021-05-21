@@ -32,8 +32,7 @@ class FlatJoinRoomVC: UIViewController {
         roomNumberTF.borderStyle = .roundedRect
         self.view.addSubview(roomNumberTF)
         roomNumberTF.snp.makeConstraints { maker in
-            maker.left.equalToSuperview().offset(16)
-            maker.right.equalToSuperview().offset(-16)
+            maker.left.right.equalToSuperview().inset(16)
             maker.top.equalTo(46)
             maker.height.equalTo(48)
         }
@@ -103,7 +102,7 @@ class FlatJoinRoomVC: UIViewController {
         micSelectBtn.addTarget(self, action: #selector(micSelectAction), for: .touchUpInside)
         self.view.addSubview(micSelectBtn)
         micSelectBtn.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(8)
+            maker.left.equalToSuperview().inset(8)
             maker.top.equalTo(joinLB.snp.bottom).offset(8)
             maker.size.equalTo(CGSize(width: 32, height: 32))
         }
@@ -114,7 +113,7 @@ class FlatJoinRoomVC: UIViewController {
         videoSelectBtn.addTarget(self, action: #selector(videoSelectAction), for: .touchUpInside)
         self.view.addSubview(videoSelectBtn)
         videoSelectBtn.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(134)
+            maker.left.equalToSuperview().inset(134)
             maker.top.equalTo(joinLB.snp.bottom).offset(8)
             maker.size.equalTo(CGSize(width: 32, height: 32))
         }
@@ -127,9 +126,8 @@ class FlatJoinRoomVC: UIViewController {
         joinRoomBtn.makeCornerRadius()
         self.view.addSubview(joinRoomBtn)
         joinRoomBtn.snp.makeConstraints { (maker) in
-            maker.left.equalToSuperview().offset(16)
-            maker.right.equalToSuperview().offset(-16)
-            maker.bottom.equalToSuperview().offset(-32)
+            maker.left.right.equalToSuperview().inset(16)
+            maker.bottom.equalToSuperview().inset(32)
             maker.height.equalTo(40)
         }
     }

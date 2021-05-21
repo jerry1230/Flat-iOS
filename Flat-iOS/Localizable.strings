@@ -36,3 +36,9 @@
 "Cloud_done" = "完成";
 "Cloud_delete" = "删除";
 "Cloud_storage" = "已使用 %@";
+"Order_starttime" = "开始时间";
+"Order_endtime" = "结束时间";
+"Order_regular" = "周期性房间";
+"Order_frequent" = "重复频率";
+"Order_order" = "预定";
+

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7F63B28941DD8E872040349F /* Pods_Flat_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9AA438BA5B9F901369264B /* Pods_Flat_iOS.framework */; };
+		8A69044A265763A30026A539 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A690449265763A30026A539 /* NSDate+Extension.swift */; };
+		8A69044C2657B1780026A539 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69044B2657B1780026A539 /* FlatButton.swift */; };
 		8A89A619264BE24500ED021E /* FlatHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A618264BE24500ED021E /* FlatHomeViewController.swift */; };
 		8A89A621264BE26B00ED021E /* FlatCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A620264BE26B00ED021E /* FlatCloudViewController.swift */; };
 		8A89A626264BE46900ED021E /* FlatTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A625264BE46900ED021E /* FlatTabbarController.swift */; };
@@ -55,6 +57,8 @@
 		2865AFB3F19A9F94D22C9585 /* Pods-Flat-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flat-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Flat-iOSTests/Pods-Flat-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3CC12C1FBF78C3CC792523DA /* Pods-Flat-iOS-Flat-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flat-iOS-Flat-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Flat-iOS-Flat-iOSUITests/Pods-Flat-iOS-Flat-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7926ED7334D60E8127D2E787 /* Pods-Flat-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flat-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Flat-iOSTests/Pods-Flat-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A690449265763A30026A539 /* NSDate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		8A69044B2657B1780026A539 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 		8A89A618264BE24500ED021E /* FlatHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatHomeViewController.swift; sourceTree = "<group>"; };
 		8A89A620264BE26B00ED021E /* FlatCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCloudViewController.swift; sourceTree = "<group>"; };
 		8A89A625264BE46900ED021E /* FlatTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatTabbarController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				8A89A699264D791E00ED021E /* FlatJoinRoomVC.swift */,
 				8A89A6A1264D7A1900ED021E /* FlatCreateRoomVC.swift */,
 				8A89A6A6264D7A2E00ED021E /* FlatOrderRoomVC.swift */,
+				8A69044B2657B1780026A539 /* FlatButton.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				8A89A666264D0AC300ED021E /* UIScreen+Extensions.swift */,
 				8A89A66B264D2D3900ED021E /* UIView+Extension.swift */,
 				8A89A688264D3E2400ED021E /* UIColor+Extension.swift */,
+				8A690449265763A30026A539 /* NSDate+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -468,6 +474,8 @@
 				8A89A6A7264D7A2E00ED021E /* FlatOrderRoomVC.swift in Sources */,
 				8A89A619264BE24500ED021E /* FlatHomeViewController.swift in Sources */,
 				8A89A667264D0AC300ED021E /* UIScreen+Extensions.swift in Sources */,
+				8A69044A265763A30026A539 /* NSDate+Extension.swift in Sources */,
+				8A69044C2657B1780026A539 /* FlatButton.swift in Sources */,
 				8A89A6A2264D7A1900ED021E /* FlatCreateRoomVC.swift in Sources */,
 				8A89A6AC264E4F8B00ED021E /* FlatLoginVC.swift in Sources */,
 				8A89A6EA264E57D500ED021E /* FlatHttpClient.swift in Sources */,

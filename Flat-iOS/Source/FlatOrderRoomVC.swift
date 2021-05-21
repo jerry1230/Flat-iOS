@@ -8,7 +8,7 @@
 import UIKit
 
 class FlatOrderRoomVC: UIViewController {
-    var curRoomType = RoomType.miniClass
+    var curRoomType = FlatRoomType.miniClass
     var scrollView = UIScrollView()
     var regularView:UIView = {
         let contentView = UIView()
@@ -97,29 +97,11 @@ class FlatOrderRoomVC: UIViewController {
             maker.top.equalTo(110)
             maker.size.equalTo(CGSize(width: 30, height: 21))
         }
-    
-        let imgArray:[String] = ["onetoone", "bigclass", "smallclass"]
-        let nameArray:[String] = ["Create_oneclass", "Create_bigclass", "Create_smallclass"]
-        
+        let roomType:[FlatRoomType] = [.miniClass, .bigClass, .smallClass]
         for index in 0...2 {
-            let classBtn = UIButton(type: .custom)
-            classBtn.tag = RoomType.miniClass.rawValue + index
-            classBtn.size = CGSize(width: 104, height: 140)
-            classBtn.clipsToBounds = true
-            classBtn.layer.borderWidth = 1
-            classBtn.layer.borderColor = UIColor.hexColor(hex: index == 0 ? "#3381FF" : "#DBE1EA").cgColor
-            classBtn.layer.cornerRadius = 4
+            let classBtn = FlatRoomButton(type: roomType[index])
+            classBtn.tag = roomType[index].rawValue
             classBtn.isSelected = index == 0 ? true : false
-            classBtn.setTitle(NSLocalizedString(nameArray[index], comment: ""), for: .normal)
-            classBtn.setTitleColor(.hexColor(hex: "#444E60"), for: .normal)
-            classBtn.titleLabel?.font = .systemFont(ofSize: 16)
-            let rect = classBtn.titleRect(forContentRect: classBtn.contentRect(forBounds:classBtn.bounds))
-            classBtn.setImage(UIImage(named: imgArray[index]), for: .normal)
-            classBtn.contentVerticalAlignment = .top
-            classBtn.contentHorizontalAlignment = .left
-            classBtn.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: -8, right: -8)
-            let labe_l = (classBtn.size.width - rect.size.width) / 2
-            classBtn.titleEdgeInsets = UIEdgeInsets(top: 106, left: -(88 - labe_l), bottom: -106, right: labe_l)
             classBtn.addTarget(self, action: #selector(classSelectedAction), for: .touchUpInside)
             self.scrollView.addSubview(classBtn)
             classBtn.snp.makeConstraints { (maker) in
@@ -282,14 +264,12 @@ class FlatOrderRoomVC: UIViewController {
         if button.tag != self.curRoomType.rawValue {
             let preSelBtn = self.scrollView.viewWithTag(self.curRoomType.rawValue) as! UIButton
             let preStateBtn = self.scrollView.viewWithTag(self.curRoomType.rawValue + 100) as! UIButton
-            preSelBtn.layer.borderColor = UIColor.hexColor(hex:"#DBE1EA").cgColor
             preSelBtn.isSelected = false
             preStateBtn.isSelected = false
             button.isSelected = true
-            button.layer.borderColor = UIColor.hexColor(hex:"#3381FF").cgColor
             let nowStatebtn = self.scrollView.viewWithTag(button.tag + 100) as! UIButton
             nowStatebtn.isSelected = true
-            self.curRoomType = RoomType(rawValue: button.tag)!
+            self.curRoomType = FlatRoomType(rawValue: button.tag)!
         }
     }
     

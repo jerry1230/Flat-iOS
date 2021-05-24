@@ -62,19 +62,17 @@ final class FlatCloudViewController: UIViewController {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
             self.navigationItem.title = NSLocalizedString("Flat_cloud", comment: "")
-            self.navigationItem.largeTitleDisplayMode = .always
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.largeTitleTextAttributes = [.font : UIFont.boldSystemFont(ofSize: 34)]
         } else {
-            
             self.title = NSLocalizedString("Flat_cloud", comment: "")
-        
         }
         
         self.tableView.rowHeight = 69
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.register(FlatCloudCell.self, forCellReuseIdentifier: flatReuseIdentifier)
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
@@ -88,6 +86,8 @@ final class FlatCloudViewController: UIViewController {
         }
     }
 }
+
+let flatReuseIdentifier = "FlatCloudCell"
 
 // MARK: - @protocol UITableViewDelegate
 extension FlatCloudViewController: UITableViewDelegate {
@@ -103,10 +103,14 @@ extension FlatCloudViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cloudCell = FlatCloudCell(style: .subtitle, reuseIdentifier: "FlatCloudCell")
+        let cloudCell = FlatCloudCell(style: .subtitle, reuseIdentifier: flatReuseIdentifier)
+        if cloudCell == nil {
+//            cloudCell.checkboxBtn.addTarget(self, action: #selector(fileSelectedAction), for: .touchUpInside)
+        }
+//        cloudCell.delete =  self
         cloudCell.loadData(CloudFile())
-        cloudCell.checkboxBtn.addTarget(self, action: #selector(fileSelectedAction), for: .touchUpInside)
         cloudCell.isSelecting = self.isEdit
+
         return cloudCell
     }
     
@@ -163,6 +167,7 @@ public class FlatCloudCell: UITableViewCell{
         self.detailTextLabel?.textColor = .hexColor(hex: "#DBE1EA")
         self.checkboxBtn.setImage(UIImage(named: "checkbox"), for: .normal)
         self.checkboxBtn.setImage(UIImage(named: "checkbox_y"), for: .selected)
+        self.checkboxBtn.addTarget(self, action: #selector(loadData), for: .touchUpInside)
         self.contentView.addSubview(self.checkboxBtn)
         self.checkboxBtn.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview().inset(18)
@@ -171,7 +176,8 @@ public class FlatCloudCell: UITableViewCell{
         }
     }
     
-    func loadData(_ file:CloudFile){
+    @objc func loadData(_ file:CloudFile){
+//        if self.deletegate
         self.imageView?.image = UIImage(named: file.type.rawValue)
         self.textLabel?.text = file.name
         self.detailTextLabel?.text = file.time + "  " + file.sizeDes

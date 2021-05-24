@@ -10,6 +10,7 @@
 		7F63B28941DD8E872040349F /* Pods_Flat_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9AA438BA5B9F901369264B /* Pods_Flat_iOS.framework */; };
 		8A69044A265763A30026A539 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A690449265763A30026A539 /* NSDate+Extension.swift */; };
 		8A69044C2657B1780026A539 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69044B2657B1780026A539 /* FlatButton.swift */; };
+		8A69044E2657CA3D0026A539 /* FlatClassRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69044D2657CA3D0026A539 /* FlatClassRoomVC.swift */; };
 		8A89A619264BE24500ED021E /* FlatHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A618264BE24500ED021E /* FlatHomeViewController.swift */; };
 		8A89A621264BE26B00ED021E /* FlatCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A620264BE26B00ED021E /* FlatCloudViewController.swift */; };
 		8A89A626264BE46900ED021E /* FlatTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A89A625264BE46900ED021E /* FlatTabbarController.swift */; };
@@ -59,6 +60,7 @@
 		7926ED7334D60E8127D2E787 /* Pods-Flat-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flat-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Flat-iOSTests/Pods-Flat-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8A690449265763A30026A539 /* NSDate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		8A69044B2657B1780026A539 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		8A69044D2657CA3D0026A539 /* FlatClassRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatClassRoomVC.swift; sourceTree = "<group>"; };
 		8A89A618264BE24500ED021E /* FlatHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatHomeViewController.swift; sourceTree = "<group>"; };
 		8A89A620264BE26B00ED021E /* FlatCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatCloudViewController.swift; sourceTree = "<group>"; };
 		8A89A625264BE46900ED021E /* FlatTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatTabbarController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				8A89A6A1264D7A1900ED021E /* FlatCreateRoomVC.swift */,
 				8A89A6A6264D7A2E00ED021E /* FlatOrderRoomVC.swift */,
 				8A69044B2657B1780026A539 /* FlatButton.swift */,
+				8A69044D2657CA3D0026A539 /* FlatClassRoomVC.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A69044E2657CA3D0026A539 /* FlatClassRoomVC.swift in Sources */,
 				8ADD753C264B824100B326AE /* ViewController.swift in Sources */,
 				8ADD7538264B824100B326AE /* AppDelegate.swift in Sources */,
 				8A89A66C264D2D3900ED021E /* UIView+Extension.swift in Sources */,

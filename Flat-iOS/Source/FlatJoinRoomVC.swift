@@ -134,6 +134,7 @@ class FlatJoinRoomVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
         }
@@ -148,7 +149,8 @@ class FlatJoinRoomVC: UIViewController {
     }
     
     @objc func joinRoomAction() {
-        
+        let vc = FlatClassRoomVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

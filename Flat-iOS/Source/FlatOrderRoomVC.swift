@@ -196,6 +196,7 @@ class FlatOrderRoomVC: UIViewController {
         
         let frequentBtn = FlatPickerButton(frame: .zero)
         frequentBtn.setTitle("周一、周二", for: .normal)
+        frequentBtn.addTarget(self, action: #selector(weekDaySelectAction), for: .touchUpInside)
         self.scrollView.addSubview(frequentBtn)
         frequentBtn.snp.makeConstraints { maker in
             maker.left.right.equalToSuperview().inset(16)
@@ -205,10 +206,12 @@ class FlatOrderRoomVC: UIViewController {
         
         let endDateBtn = FlatPickerButton()
         endDateBtn.setTitle("2021/2/25", for: .normal)
+        endDateBtn.addTarget(self, action: #selector(datePickerAction), for: .touchUpInside)
         self.scrollView.addSubview(endDateBtn)
         
         let endTimeBtn = FlatPickerButton()
         endTimeBtn.setTitle("16:30", for: .normal)
+        endDateBtn.addTarget(self, action: #selector(timePickerAction), for: .touchUpInside)
         self.scrollView.addSubview(endTimeBtn)
         
         endDateBtn.snp.makeConstraints { maker in
@@ -251,6 +254,8 @@ class FlatOrderRoomVC: UIViewController {
         
         for index in 0...3 {
             let pikerBtn = FlatPickerButton(type: .custom)
+            let sel:Selector = index % 2 == 0 ? #selector(datePickerAction) : #selector(timePickerAction)
+            pikerBtn.addTarget(self, action: sel, for: .touchUpInside)
             self.scrollView.addSubview(pikerBtn)
             pikerBtn.snp.makeConstraints { maker in
                 maker.left.equalTo(16 + index % 2 * 179)
@@ -277,11 +282,23 @@ class FlatOrderRoomVC: UIViewController {
         button.isSelected = !button.isSelected
     }
     
-    @objc func orderRoomAction() {
+    @objc func datePickerAction() {
         
     }
     
-    @objc func pickerAction() {
+    @objc func timePickerAction() {
         
     }
+    
+    @objc func weekDaySelectAction() {
+        
+    }
+    
+    @objc func orderRoomAction() {
+        
+    }
+}
+
+class WeekDayView: UIView {
+    
 }
